@@ -15,14 +15,14 @@ try:
         cursor = connection.cursor()
 
         # SQL queries to create the tables
-        create_authors_table = """
+        create_authors_table = 
         CREATE TABLE IF NOT EXISTS authors (
             author_id INT AUTO_INCREMENT PRIMARY KEY,
             author_name VARCHAR(215) NOT NULL
         )
-        """
         
-        create_books_table = """
+        
+        create_books_table = 
         CREATE TABLE IF NOT EXISTS books (
             book_id INT AUTO_INCREMENT PRIMARY KEY,
             title VARCHAR(130) NOT NULL,
@@ -31,27 +31,27 @@ try:
             publication_date DATE,
             FOREIGN KEY (author_id) REFERENCES authors(author_id)
         )
-        """
         
-        create_customers_table = """
+        
+        create_customers_table = 
         CREATE TABLE IF NOT EXISTS customers (
             customer_id INT AUTO_INCREMENT PRIMARY KEY,
             customer_name VARCHAR(215) NOT NULL,
             email VARCHAR(215),
             address TEXT
         )
-        """
         
-        create_orders_table = """
+        
+        create_orders_table = 
         CREATE TABLE IF NOT EXISTS orders (
             order_id INT AUTO_INCREMENT PRIMARY KEY,
             customer_id INT,
             order_date DATE,
             FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
         )
-        """
         
-        create_order_details_table = """
+        
+        create_order_details_table = 
         CREATE TABLE IF NOT EXISTS order_details (
             orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
             order_id INT,
@@ -60,7 +60,7 @@ try:
             FOREIGN KEY (order_id) REFERENCES orders(order_id),
             FOREIGN KEY (book_id) REFERENCES books(book_id)
         )
-        """
+        
 
         # Execute the queries
         cursor.execute(create_authors_table)
