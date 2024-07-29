@@ -6,7 +6,7 @@ CREATE TABLE Books (
     publication_date DATE,
     FOREIGN KEY (author_id) REFERENCES Authors(author_id),
 )
-
+#HHHHDHDD
 CREATE TABLE Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     author_name VARCHAR(215)
